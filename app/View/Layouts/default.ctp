@@ -28,11 +28,13 @@
 	<!-- TODO一覧表示のテンプレート -->
 	<script type="text/template" id="list-template">
 	<h1>TODOリスト</h1>
-	 <hr>
-	 <div>
-		<table border="1" width="350px">
-			<tbody id="todo-lists"></tbody>
-		</table>
+	<textarea style="width:300px;height:50px"id="new-todo" placeholder="Todo?" autofocus></textarea>
+	<input type="button" id="addTodo" value="追加">
+	<hr>
+	<div>
+	<table border="1" width="350px">
+		<tbody id="todo-lists"></tbody>
+	</table>
 	</div>
 	</script>
 
