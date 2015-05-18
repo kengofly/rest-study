@@ -12,10 +12,13 @@ var app = app || {};
 		//DOMイベントハンドラ設定
 		events : {
 			//チェックボックスクリック時
-			'click.toggle' : 'onStatusToggleClick',
+			'click .toggle' : 'onStatusToggleClick',
+			//削除ボタンクリック時
+			'click .remove-link' : 'onRemoveClick',
 		},
 
 		initialize : function() {
+			this.listenTo(this.model, 'destroy', this.remove);
 		},
 		render : function(){
 			this.$el.html(this.template(this.model.toJSON()));
@@ -23,6 +26,11 @@ var app = app || {};
 		},
 		onStatusToggleClick : function(e) {
 			this.model.toggle();
+		},
+		onRemoveClick : function(e) {
+			this.model.destroy({
+				wait : true
+			});
 		},
 	});
 })(app);
