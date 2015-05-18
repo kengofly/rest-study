@@ -22,6 +22,26 @@
 	<title>シンプルTODOアプリ</title>
 </head>
 <body>
+	<!-- コンテンツ -->
+	<div id="content">
+	</div>
+	<!-- TODO一覧表示のテンプレート -->
+	<script type="text/template" id="list-template">
+	<h1>TODOリスト</h1>
+	 <hr>
+	 <div>
+		<table border="1" width="350px">
+			<tbody id="todo-lists"></tbody>
+		</table>
+	</div>
+	</script>
+
+	<!-- TODO一行分のテンプレート（上のtbody部分に挿入される） -->
+	<script type="text/template" id="item-template">
+	<td style="margin:0px">
+		<span class="todo-edit" style="margin:0px"><%- todo %></span>
+	</td>
+	</script>
 
 	<!-- js(library)  -->
 	<script src="js/lib/jquery-2.1.3.min.js"></script>
@@ -34,6 +54,7 @@
 	<!-- colection -->
 	<script src="js/collections/todo-collection.js"></script>
 	<!-- view -->
+	<script src="js/views/todo-item-view.js"></script>
 	<script src="js/views/todo-collection-view.js"></script>
 	<!-- router -->
 	<script src="js/routers/router.js"></script>
